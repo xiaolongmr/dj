@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>夏dj导航站备用域名</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+      }
+
+      .header {
+        /* border-radius: 2vh 2vh 0 0; */
+        background-color: #efe2e2;
+        color: #ffffff;
+        font-size: 2.5vh;
+        font-weight: 900;
+        display: block;
+        text-align: center;
+        height: 10vh;
+        line-height: 15vh;
+        padding: 2vh;
+        /* box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); */
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 9999;
+        background-size: cover;
+        /* padding: 65px 0 15px 0; */
+        z-index: 5;
+      }
+      .header::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-image: url(https://i3.mjj.rip/2023/07/09/3edfc5f62d5fb9baac2bbe7371f69033.jpeg);
+        background-size: cover;
+        background-position: center;
+        filter: blur(0.4vh);
+        backdrop-filter: blur(0.4vh);
+        -webkit-backdrop-filter: blur(0.4vh); /* Safari支持 */
+        opacity: 0.8; /* 调整透明度 */
+        z-index: -1;
+        clip-path: inset(1vh); /* 调整裁剪边距 */
+        transform: scale(1.2);
+      }
+      .container {
+        margin-top: 15vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      .desc {
+        font-size: 1.5vh;
+        position: fixed;
+        left: 0;
+        text-align: center;
+        bottom: 0;
+        width: 100%;
+        background-color: #ffffff;
+        color: #333333;
+        padding: 20px;
+        box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
+      }
+      ul {
+        list-style-type: none;
+        padding: 0;
+      }
+
+      li {
+        margin-bottom: 2vh;
+        display: flex;
+        font-size: 2.2vh;
+        align-items: center;
+        background-color: #ffffff;
+        /* box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); */
+        border-radius: 1.5vh;
+        padding: 1vh 2vh;
+      }
+
+      /* 样式定义 */
+      .dot {
+        display: inline-block;
+        width: 1.5vh;
+        height: 1.5vh;
+        border-radius: 50vh;
+      }
+
+      /* 小绿点颜色 */
+      .dot.green {
+        background-color: green;
+      }
+
+      /* 小红点颜色 */
+      .dot.red {
+        background-color: red;
+      }
+
+      a {
+        display: block;
+        color: #333333;
+        background-color: aliceblue;
+        text-decoration: none;
+        padding: 1vh 2vh;
+        width: -webkit-fill-available;
+        border-radius: 1vh;
+        transition: background-color 0.3s ease;
+        margin-left: 2vh;
+      }
+
+      a:hover {
+        background-color: antiquewhite;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div id="app">
+      <div class="header">夏dj导航站备用域名</div>
+
+      <div class="container">
+        <ul>
+          <li>
+            <span id="cf-dot" class="dot"></span
+            ><a href="https://xiadj.pages.dev">夏dj导航站 ✨CF节点</a>
+          </li>
+          <li>
+            <span id="everland-dot" class="dot"></span
+            ><a href="https://dh.4everland.app">夏dj导航站 ✨4EVERLAND节点</a>
+          </li>
+          <li>
+            <span id="github-dot" class="dot"></span
+            ><a href="https://xiaolongmr.github.io">夏dj导航站 ✨Github节点</a>
+          </li>
+          <li>
+            <span id="xiadj-dot" class="dot"></span
+            ><a href="https://www.xiadj.cf">夏dj导航站 ✨CF节点2</a>
+          </li>
+          <li>
+            <span id="1nav-dot" class="dot"></span
+            ><a href="https://xiadj.cf">夏dj导航站 ✨CF节点3</a>
+          </li>
+        </ul>
+        <div class="desc">
+          <p>
+            <span style="color: tomato; font-size: 2.5vh; text-align: center"
+              >●
+            </span>
+            表示宕机，但检测不一定准
+          </p>
+          <p>网站打开速度和网络供应商有关，河南地区移动最差</p>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script>
+    // 检测函数
+    function checkWebsiteAvailability(url, dotId) {
+      var xhr = new XMLHttpRequest();
+      xhr.open("GET", url, true);
+      xhr.onreadystatechange = function () {
+        if (xhr.readyState === 4) {
+          if (xhr.status === 200) {
+            // 网站可用时显示小绿点
+            document.getElementById(dotId).className = "dot green";
+          } else {
+            // 网站不可用时显示小红点
+            document.getElementById(dotId).className = "dot red";
+          }
+        }
+      };
+      xhr.send();
+    }
+
+    // 获取所有链接元素
+    var links = document.querySelectorAll("a");
+    for (var i = 0; i < links.length; i++) {
+      var link = links[i];
+      var url = link.getAttribute("href");
+      var dotId = link.previousElementSibling.getAttribute("id");
+      checkWebsiteAvailability(url, dotId);
+    }
+    // 获取所有链接元素
+    var links = document.querySelectorAll("a");
+    for (var i = 0; i < links.length; i++) {
+      // 设置链接打开方式为新标签页
+      links[i].setAttribute("target", "_blank");
+    }
+  </script>
+</html>
